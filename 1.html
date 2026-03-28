@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل التكوينات الجامعية المغربية - ما بعد البكالوريا 2025-2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0d9488;
+            --primary-dark: #0f766e;
+            --primary-light: #5eead4;
+            --secondary-color: #6366f1;
+            --accent-color: #f59e0b;
+            --bg-color: #f0f9ff;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, var(--bg-color) 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.95) 0%, rgba(99, 102, 241, 0.9) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: white;
+            padding: 3rem 1rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header-icons i {
+            font-size: 3rem;
+            opacity: 0.9;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease 0.2s both;
+            background: linear-gradient(to right, #ffffff, #ccfbf1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .school-attribution {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .school-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .school-details {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: var(--primary-color);
+        }
+
+        /* Search Section - Glassmorphism */
+        .search-section {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(20px);
+            margin: -2rem auto 2rem;
+            max-width: 900px;
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255,255,255,0.5);
+            position: relative;
+            z-index: 10;
+            animation: slideUp 0.8s ease 0.5s both;
+        }
+
+        [data-theme="dark"] .search-section {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .filter-select {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--card-bg);
+            color: var(--text-primary);
+            cursor: pointer;
+            min-width: 200px;
+            transition: all 0.3s;
+        }
+
+        .filter-select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .advanced-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .results-count {
+            text-align: center;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .results-count span {
+            color: var(--primary-color);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .formations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Modern Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
+            position: relative;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s;
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-actions {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.9);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+            color: var(--primary-color);
+            background: white;
+        }
+
+        .action-btn.favorite.active {
+            color: #ef4444;
+            background: #fee2e2;
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.3);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: rgba(13, 148, 136, 0.05);
+            padding: 0.75rem;
+            border-radius: 12px;
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Accordion */
+        .accordion {
+            border-top: 2px solid var(--border-color);
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.25rem 0;
+            background: none;
+            border: none;
+            text-align: right;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s;
+        }
+
+        .accordion-header:hover {
+            color: var(--primary-dark);
+            padding-right: 0.5rem;
+        }
+
+        .accordion-header i {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.2rem;
+        }
+
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 0 0 1.5rem 0;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            animation: slideInRight 0.3s ease both;
+        }
+
+        .list-item i {
+            color: var(--accent-color);
+            margin-top: 0.2rem;
+            font-size: 0.8rem;
+        }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+
+        .no-results i {
+            font-size: 5rem;
+            color: var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .no-results-text {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.3);
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(13, 148, 136, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 4rem 1rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-light);
+        }
+
+        .footer-section p, .footer-section ul {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-section li i {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .subtitle { font-size: 1.1rem; }
+            .search-grid { grid-template-columns: 1fr; }
+            .formations-grid { grid-template-columns: 1fr; }
+            .card-meta { grid-template-columns: 1fr; }
+            .theme-toggle { top: 20px; right: 20px; left: auto; }
+            .back-btn { top: 80px; }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Compare Bar */
+        .compare-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--card-bg);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            z-index: 100;
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .compare-bar.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .compare-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .compare-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" title="تبديل الوضع الليلي">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-right"></i>
+        رجوع للرئيسية
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-icons">
+                <i class="fas fa-graduation-cap"></i>
+                <i class="fas fa-university"></i>
+            </div>
+            <h1>📘 دليل التكوينات الجامعية المغربية</h1>
+            <p class="subtitle">ما بعد البكالوريا 2025-2026</p>
+            <p class="subtitle" style="font-size: 1.1rem; opacity: 0.9;">دليل شامل للتكوينات الجامعية والمهنية في المغرب</p>
+            
+            <div class="school-attribution">
+                <div class="school-name">
+                    <i class="fas fa-school"></i>
+                    <span>إعداد: الثانوية عمرو بن العاص التأهيلية</span>
+                </div>
+                <div class="school-details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    المديرية الإقليمية: أكادير إداوتنان – الأكاديمية الجهوية للتربية والتكوين لجهة سوس ماسة
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-grid">
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن تكوين بالاسم أو الوصف...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <select id="categorySelect" class="filter-select">
+                <option value="الكل">جميع الفئات</option>
+                <option value="العلوم والتكنولوجيا">العلوم والتكنولوجيا</option>
+                <option value="التجارة والتدبير">التجارة والتدبير</option>
+                <option value="الهندسة">الهندسة</option>
+                <option value="الصحة">الصحة</option>
+                <option value="التعليم">التعليم</option>
+                <option value="الفلاحة">الفلاحة</option>
+                <option value="الفنون">الفنون</option>
+                <option value="العلوم الشرعية">العلوم الشرعية</option>
+                <option value="الأمن والدفاع">الأمن والدفاع</option>
+                <option value="الطيران">الطيران</option>
+                <option value="السياحة">السياحة</option>
+                <option value="تكنولوجيا المعلومات">تكنولوجيا المعلومات</option>
+                <option value="الصناعة">الصناعة</option>
+                <option value="الطاقة">الطاقة</option>
+                <option value="الرياضة">الرياضة</option>
+                <option value="الثقافة والتراث">الثقافة والتراث</option>
+                <option value="الإعلام">الإعلام</option>
+                <option value="البناء والأشغال العمومية">البناء والأشغال العمومية</option>
+                <option value="الإدارة الترابية">الإدارة الترابية</option>
+                <option value="العدل">العدل</option>
+                <option value="الصناعة الغذائية">الصناعة الغذائية</option>
+                <option value="التكوين المهني">التكوين المهني</option>
+                <option value="الملاحة البحرية">الملاحة البحرية</option>
+            </select>
+        </div>
+        
+        <div class="advanced-filters">
+            <select id="durationFilter" class="filter-select" style="min-width: 150px;">
+                <option value="all">المدة: الكل</option>
+                <option value="2">سنتان</option>
+                <option value="3">3 سنوات</option>
+                <option value="4">4 سنوات</option>
+                <option value="5">5 سنوات</option>
+                <option value="6">6 سنوات</option>
+            </select>
+            
+            <select id="typeFilter" class="filter-select" style="min-width: 150px;">
+                <option value="all">النوع: الكل</option>
+                <option value="جامعي">جامعي</option>
+                <option value="مهني">مهني</option>
+                <option value="عسكري">عسكري/أمني</option>
+            </select>
+        </div>
+
+        <div class="results-count">
+            عدد النتائج: <span id="resultsCount">35</span> تكوين
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="formations-grid" id="formationsGrid"></div>
+        
+        <div class="no-results" id="noResults">
+            <i class="fas fa-search"></i>
+            <p class="no-results-text">لا توجد نتائج مطابقة لبحثك</p>
+            <button class="reset-btn" onclick="resetSearch()">
+                <i class="fas fa-redo"></i> إعادة ضبط البحث
+            </button>
+        </div>
+    </div>
+
+    <!-- Compare Bar -->
+    <div class="compare-bar" id="compareBar">
+        <span id="compareCount">تم اختيار 0 تكوينات</span>
+        <button class="compare-btn" onclick="compareSelected()">
+            <i class="fas fa-balance-scale"></i> مقارنة
+        </button>
+        <button class="action-btn" onclick="clearComparison()" style="background: #ef4444; color: white;">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>
+                    <i class="fas fa-graduation-cap"></i>
+                    دليل التكوينات الجامعية
+                </h3>
+                <p>دليل شامل يضم جميع التكوينات الجامعية والمهنية المتاحة في المغرب لحاملي شهادة البكالوريا.</p>
+            </div>
+            <div class="footer-section">
+                <h3>
+                    <i class="fas fa-link"></i>
+                    روابط مفيدة
+                </h3>
+                <ul>
+                    <li><i class="fas fa-chevron-left"></i> www.cursussup.gov.ma</li>
+                    <li><i class="fas fa-chevron-left"></i> www.taalim.ma</li>
+                    <li><i class="fas fa-chevron-left"></i> www.men.gov.ma</li>
+                    <li><i class="fas fa-chevron-left"></i> www.ofppt.ma</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>
+                    <i class="fas fa-phone"></i>
+                    تواصل معنا
+                </h3>
+                <p>للمزيد من المعلومات، يرجى زيارة الموقع الرسمي للوزارة أو التواصل مع المؤسسات المعنية.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025-2026 الثانوية عمرو بن العاص التأهيلية - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        // Formations Data (مختصر للعرض - يمكن إضافة الباقي بنفس الطريقة)
+        const formations = [
+        {
+                id: 'sciences',
+                title: 'كليات العلوم',
+                category: 'العلوم والتكنولوجيا',
+                type: 'جامعي',
+                duration: '3',
+                description: 'مؤسسات للتعليم العالي ذات استقطاب مفتوح، تناط بها مهمة تلقين التعليم العالي في شكل تكوين أساسي وتكوين مستمر.',
+                requirements: ['شهادة البكالوريا أو ما يعادلها', 'الاستيفاء لشروط الولوج حسب المسار المختار'],
+                branches: ['BCG (البيولوجيا، الكيمياء، الجيولوجيا)', 'MIP (الرياضيات، المعلوميات، الفيزياء)', 'PC (الفيزياء والكيمياء)'],
+                accessMethod: 'التسجيل عبر منصة Cursussup.gov.ma'
+            },
+            {
+                id: 'fst',
+                title: 'كليات العلوم والتقنيات (FST)',
+                category: 'العلوم والتكنولوجيا',
+                type: 'جامعي',
+                duration: '3',
+                description: 'مؤسسات للتعليم العالي تابعة للجامعات ذات استقطاب محدود. تنظم الدراسات حسب هندسة بيداغوجية إجازة - ماستر - دكتوراه.',
+                requirements: ['شهادة البكالوريا العلمية', 'النجاح في مباراة الولوج'],
+                branches: ['الهندسة البيولوجية', 'هندسة البيئة وعلوم الأرض', 'الهندسة الميكانيكية', 'الهندسة المعلوماتية'],
+                accessMethod: 'مباراة الولوج عبر منصة Cursussup.gov.ma'
+            },
+            {
+                id: 'cpge',
+                title: 'الأقسام التحضيرية للمدارس العليا (CPGE)',
+                category: 'العلوم والتكنولوجيا',
+                type: 'جامعي',
+                duration: '2',
+                description: 'تكوين لمدة سنتين يؤهل للولوج إلى المدارس العليا للمهندسين ومدارس التجارة والتدبير.',
+                requirements: ['شهادة البكالوريا بميزة مستحسن على الأقل', 'السن أقل من 22 سنة'],
+                branches: ['MPSI', 'PCSI', 'TSI', 'ECT', 'ECS'],
+                accessMethod: 'التسجيل عبر بوابة e-CPGE أو مسار'
+            },
+            {
+                id: 'bts',
+                title: 'شهادة التقني العالي (BTS)',
+                category: 'التكوين المهني',
+                type: 'مهني',
+                duration: '2',
+                description: 'تكوين لمدة سنتين يهدف إلى إعداد تقنيين من مستوى الأطر المتوسطة ذات مؤهلات علمية وتكنولوجية ومهنية.',
+                requirements: ['شهادة البكالوريا أو ما يعادلها', 'السن أقل من 23 سنة'],
+                branches: ['صيانة السيارات', 'الكهرباء والإلكترونيك', 'التبريد وتكييف الهواء', 'تسيير المقاولات'],
+                accessMethod: 'التسجيل عبر بوابة e-bts.men.gov.ma'
+            },
+            {
+                id: 'enam',
+                title: 'المدرسة الوطنية للفلاحة بمكناس',
+                category: 'الفلاحة',
+                type: 'جامعي',
+                duration: '5',
+                description: 'تقدم تكويناً في الهندسة الفلاحية خلال خمس سنوات موزعة على سلكين: سلك التحضير وسلك المهندسين.',
+                requirements: ['بكالوريا علمية', 'السن أقل من 23 سنة'],
+                branches: ['الهندسة الفلاحية', 'الإنتاج النباتي', 'الإنتاج الحيواني', 'الهندسة Agroéconomique'],
+                accessMethod: 'التسجيل عبر concours.enameknes.net'
+            },
+            {
+                id: 'encg',
+                title: 'المدارس الوطنية للتجارة والتسيير',
+                category: 'التجارة والتدبير',
+                type: 'جامعي',
+                duration: '5',
+                description: 'مؤسسات عمومية تابعة لوزارة التعليم العالي تهدف إلى تكوين أطر عليا في تخصصات التجارة والتسيير.',
+                requirements: ['شهادة البكالوريا في الشعب العلمية أو الاقتصادية', 'النجاح في مباراة الولوج'],
+                branches: ['التجارة الدولية', 'التسويق', 'التدبير المالي', 'التدقيق ومراقبة التسيير'],
+                accessMethod: 'مباراة الولوج عبر منصة Cursussup.gov.ma'
+            },
+            {
+                id: 'medecine',
+                title: 'كليات الطب والصيدلة',
+                category: 'الصحة',
+                type: 'جامعي',
+                duration: '6',
+                description: 'مؤسسات للتعليم العالي تابعة للجامعات ذات استقطاب محدود توفر تكوينات في المجال الطبي.',
+                requirements: ['شهادة البكالوريا في شعبة العلوم الرياضية أو التجريبية', 'النجاح في المباراة المشتركة'],
+                branches: ['الطب العام', 'الصيدلة', 'طب الأسنان'],
+                accessMethod: 'المباراة المشتركة عبر cursussup.gov.ma/medecine'
+            },
+            {
+                id: 'ens',
+                title: 'المدارس العليا للأساتذة (ENS)',
+                category: 'التعليم',
+                type: 'جامعي',
+                duration: '4',
+                description: 'تكوين أساتذة التعليم الثانوي والتأهيلي في مختلف التخصصات.',
+                requirements: ['شهادة البكالوريا بميزة مستحسن على الأقل', 'النجاح في مباراة الولوج'],
+                branches: ['العلوم الرياضية', 'العلوم الفيزيائية', 'علوم الحياة والأرض', 'اللغات'],
+                accessMethod: 'مباراة الولوج عبر منصة Cursussup.gov.ma'
+            },
+            {
+                id: 'ensa',
+                title: 'المدارس الوطنية العليا للفنون والمهن',
+                category: 'الهندسة',
+                type: 'جامعي',
+                duration: '5',
+                description: 'تكوين مهندسي الدولة تكويناً نظرياً وتطبيقياً يمكنهم من الاستجابة لحاجيات المقاولات.',
+                requirements: ['شهادة البكالوريا في الشعب العلمية أو التقنية', 'النجاح في المباراة الوطنية المشتركة'],
+                branches: ['الهندسة المدنية', 'الهندسة الميكانيكية', 'الهندسة الكهربائية', 'الهندسة المعلوماتية'],
+                accessMethod: 'المباراة الوطنية المشتركة عبر Cursussup.gov.ma'
+            },
+            {
+                id: 'police',
+                title: 'الأمن الوطني - الشرطة',
+                category: 'الأمن والدفاع',
+                type: 'عسكري',
+                duration: '3',
+                description: 'تكوين ضباط الشرطة وضباط الأمن وعمداء الشرطة.',
+                requirements: ['شهادة البكالوريا أو الإجازة حسب السلك', 'السن بين 21 و 30/35 سنة', 'القامة 1.70م للذكور'],
+                branches: ['عمداء الشرطة', 'ضباط الشرطة', 'ضباط الأمن'],
+                accessMethod: 'التسجيل عبر موقع الأمن الوطني'
+            },
+            {
+                id: 'iscae',
+                title: 'المعهد العالي للتجارة وإدارة المقاولات (ISCAE)',
+                category: 'التجارة والتدبير',
+                description: 'مؤسسة عمومية للتعليم العالي غير التابعة للجامعات، تهدف إلى إعداد أطر متخصصة في التجارة والتدبير.',
+                duration: '3 سنوات للماستر',
+                requirements: ['طلبة الأقسام التحضيرية', 'طلبة السنة الثانية من التعليم العالي في شعبة الاقتصاد أو التدبير'],
+                branches: ['الأسواق المالية', 'تمويل الشركات', 'التدقيق والمراقبة والمحاسبة', 'التسويق', 'التدبير والموارد البشرية'],
+                accessMethod: 'مباراة الولوج عبر groupeiscae.ma'
+            },
+            {
+                id: 'istiqlal',
+                title: 'معهد تكوين التقنيين المتخصصين في الفلاحة',
+                category: 'الفلاحة',
+                description: 'تكوين تقنيين متخصصين في مجالات الفلاحة والبستنة وتربية الماشية.',
+                duration: 'سنتان',
+                requirements: ['شهادة البكالوريا العلمية أو التقنية أو المهنية', 'السن أقل من 30 سنة'],
+                branches: ['إنتاج وتثمين زراعة الخضروات', 'البستنة', 'تربية الماشية', 'الدواجن والنحل', 'المراقبة الصحية وتفتيش المواد الحيوانية'],
+                accessMethod: 'التسجيل عبر fpa-concours.agriculture.gov.ma'
+            },
+            {
+                id: 'ismac',
+                title: 'المعهد العالي للفن المسرحي والتنشيط الثقافي',
+                category: 'الفنون',
+                description: 'تكوين في مجال الفن المسرحي والتنشيط الثقافي.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا في جميع التخصصات', 'السن بين 17 و 25 سنة'],
+                branches: ['التمثيل', 'الإخراج', 'الديكور', 'الإضاءة', 'الملابس', 'التنشيط الثقافي'],
+                accessMethod: 'مباراة الولوج'
+            },
+            {
+                id: 'ensad',
+                title: 'المدرسة الوطنية العليا للفنون الجميلة',
+                category: 'الفنون',
+                description: 'تكوين فني ونظري في مجال الفنون الجميلة.',
+                duration: '4 سنوات',
+                requirements: ['شهادة البكالوريا في جميع الشعب', 'السن بين 17 و 25 سنة'],
+                branches: ['Arts/Espace', 'Design Graphique', 'Design d\'Intérieur'],
+                accessMethod: 'مباراة الولوج'
+            },
+            {
+                id: 'dar-hadith',
+                title: 'مؤسسة دار الحديث الحسنية',
+                category: 'العلوم الشرعية',
+                description: 'تكوين علماء وباحثين في مجال الحديث النبوي الشريف والعلوم الشرعية.',
+                duration: '4 سنوات للإجازة',
+                requirements: ['حافظ للقرآن الكريم', 'شهادة البكالوريا', 'المعدل لا يقل عن 12/20'],
+                branches: ['علوم الحديث', 'الفقه', 'التفسير', 'العقيدة'],
+                accessMethod: 'مباراة الولوج'
+            },
+            {
+                id: 'institut-imam',
+                title: 'معهد محمد السادس لتكوين الأئمة المرشدين',
+                category: 'العلوم الشرعية',
+                description: 'تكوين الأئمة والمرشدين والمرشدات.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا', 'السن بين 18 و 35 سنة'],
+                branches: ['تكوين الأئمة', 'تكوين المرشدين والمرشدات'],
+                accessMethod: 'التسجيل عبر taalim.ma'
+            },
+            {
+                id: 'far',
+                title: 'القوات المسلحة الملكية',
+                category: 'الأمن والدفاع',
+                description: 'تكوين ضباط وضباط صف القوات المسلحة الملكية.',
+                duration: '4 سنوات للأكاديمية الملكية العسكرية',
+                requirements: ['شهادة البكالوريا بميزة مستحسن', 'السن بين 18 و 22 سنة', 'القامة 1.70م للذكور و1.60م للإناث'],
+                branches: ['الأكاديمية الملكية العسكرية', 'المدرسة الملكية الجوية', 'المدرسة الملكية البحرية', 'القوات المساعدة'],
+                accessMethod: 'التسجيل عبر recrutement.far.ma'
+            },
+            {
+                id: 'aviation',
+                title: 'أكاديمية محمد السادس للطيران المدني',
+                category: 'الطيران',
+                description: 'تكوين المراقبين الجويين وتقنيي السلامة الجوية والمهندسين.',
+                duration: '3 سنوات للمهندسين',
+                requirements: ['شهادة البكالوريا العلمية أو التقنية', 'النجاح في مباراة الولوج'],
+                branches: ['مهندس دولة في الطيران المدني والتقنيات الملاحية', 'مهندس في مراقب الملاحة الجوية', 'مهندس في إلكترونيك السلامة الجوية', 'الهندسة الكهربائية والإلكترونيات والاتصالات', 'الهندسة الصناعية والإنتاجية', 'الهندسة المعلوماتية'],
+                accessMethod: 'مباراة الولوج'
+            },
+            {
+                id: 'tourisme',
+                title: 'المعهد العالي الدولي للسياحة بطنجة',
+                category: 'السياحة',
+                description: 'تكوين أطر عليا قادرة على تعبئة المهارات في التصميم والترويج والتدبير العقلاني للمنتجات السياحية.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا في جميع المسالك', 'المعدل العام أكبر من أو يساوي 14/20', 'السن أقل من 25 سنة'],
+                branches: ['الإدارة وتنظيم المقاولات السياحية والفندقية'],
+                accessMethod: 'مباراة الولوج عبر concours.isitt.ma'
+            },
+            {
+                id: 'ensias',
+                title: 'المدرسة الوطنية العليا للمعلوماتية وتحليل الأنظمة (ENSIAS)',
+                category: 'تكنولوجيا المعلومات',
+                description: 'مدرسة عليا للمهندسين متخصصة في تكنولوجيات الإعلام والتواصل.',
+                duration: '3 سنوات',
+                requirements: ['طلبة الأقسام التحضيرية الناجحين في CNC', 'الحاصلون على الإجازة في العلوم أو ما يعادلها'],
+                branches: ['Génie Logiciel', 'Business Intelligence', 'E-Logistique', 'Ingénierie des Télécommunication et Réseaux', 'Systèmes embarqués et Mobiles', 'Sécurité des Systèmes d\'Information'],
+                accessMethod: 'التسجيل عبر ensias.ma'
+            },
+            {
+                id: 'ensiasd',
+                title: 'المدرسة الوطنية العليا للذكاء الاصطناعي وعلوم المعطيات (ENSIASD)',
+                category: 'تكنولوجيا المعلومات',
+                description: 'تهدف إلى تكوين مهندسين متخصصين قادرين على مواكبة التحديات المرتبطة بالتحول الرقمي.',
+                duration: '3 سنوات',
+                requirements: ['طلبة الأقسام التحضيرية شعبة الرياضيات', 'الحاصلون على DEUG/DEUST/DUT في التخصصات المناسبة'],
+                branches: ['Sécurité IT et Confiance Numérique', 'Sciences des Données, Big data & IA'],
+                accessMethod: 'انتقاء + مباراة شفوية + مباراة كتابية'
+            },
+            {
+                id: 'enim',
+                title: 'المدرسة الوطنية العليا للمعادن (ENSM)',
+                category: 'الهندسة',
+                description: 'تكوين مهندسي الدولة في عدة تخصصات هندسية.',
+                duration: '3 سنوات',
+                requirements: ['طلبة الأقسام التحضيرية الناجحين في CNC', 'الحاصلون على DEUG/DEUST/DUT/DEUP'],
+                branches: ['الهندسة المعلوماتية', 'نظم الإنتاج', 'الالكتروميكانيك', 'الهندسة الميكانيكية والتطوير', 'الهندسة الطاقية', 'نظم المواد ومراقبة الجودة', 'التدبير الصناعي', 'البيئة والأمن الصناعي', 'المناجم', 'الهيدروجيوتكنيك'],
+                accessMethod: 'التسجيل عبر enim.ac.ma'
+            },
+            {
+                id: 'isem',
+                title: 'المعهد العالي للدراسات البحرية بالدار البيضاء',
+                category: 'الملاحة البحرية',
+                description: 'تكوين الأطر الضرورية لجميع تخصصات الأنشطة البحرية.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا العلمية أو التقنية +2', 'السن أقل من 23 سنة', 'اللياقة البدنية للعمل البحري'],
+                branches: ['Sciences Navales (ISN)', 'Mécanique Navale (IMN)', 'Construction et Maintenance Navales (ICMN)'],
+                accessMethod: 'التسجيل عبر concours.isem.ma'
+            },
+            {
+                id: 'textile',
+                title: 'المدرسة العليا لصناعة النسيج والألبسة',
+                category: 'الصناعة',
+                description: 'تكوين أطر قادرة على تحمل مهام المسؤولية في مجال تقنيات النسيج والملابس.',
+                duration: '3 سنوات',
+                requirements: ['طلبة الأقسام التحضيرية', 'الحاصلون على DEUG/DEUP/DEUST/BTS/DUT'],
+                branches: ['الهندسة الصناعية - النسيج', 'الهندسة الصناعية - اللوجستيك الدولي', 'الهندسة الصناعية - رئيس منتج', 'المعلوميات وإدارة الأنظمة', 'الهندسة الكيميائية'],
+                accessMethod: 'إيداع ملف الترشيح بالمؤسسة'
+            },
+            {
+                id: 'ifmeree',
+                title: 'معاهد التكوين في مهن الطاقات المتجددة والنجاعة الطاقية',
+                category: 'الطاقة',
+                description: 'تكوين تقنيين متخصصين في مجال الطاقات المتجددة والنجاعة الطاقية.',
+                duration: 'سنتان',
+                requirements: ['شهادة البكالوريا العلمية أو التقنية أو المهنية', 'السن أقل من 30 سنة'],
+                branches: ['أنظمة النجاعة الطاقية (EE)', 'أنظمة الطاقة الشمسية (SES)', 'أنظمة الطاقة الريحية (SEO)'],
+                accessMethod: 'التسجيل عبر inscription.ifmeree.ac.ma'
+            },
+            {
+                id: 'ifmia',
+                title: 'معاهد التكوين في مهن صناعة السيارات',
+                category: 'الصناعة',
+                description: 'تكوين تقنيين متخصصين في مجال صناعة السيارات.',
+                duration: 'سنتان',
+                requirements: ['شهادة البكالوريا العلمية أو التقنية أو المهنية', 'السن أقل من 30 سنة'],
+                branches: ['التقني المتخصص في الهندسة الميكانيكية', 'التقني المتخصص في أنظمة الاتصال', 'التقني المتخصص في صناعة السيارات', 'التقني المتخصص في الكترونيك السيارات'],
+                accessMethod: 'التسجيل عبر ifmia-sa.ma'
+            },
+            {
+                id: 'sport',
+                title: 'معهد علوم الرياضة بسطات',
+                category: 'الرياضة',
+                description: 'تكوين أطر متخصصة في تنظيم وتسيير الأنشطة الرياضية.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا في المسالك العلمية أو الاقتصادية أو المهنية المناسبة'],
+                branches: ['إجازة التدبير الرياضي', 'إجازة تكنولوجيا الرياضة', 'إجازة التدريب الرياضي'],
+                accessMethod: 'التسجيل عبر uh1.ac.ma'
+            },
+            {
+                id: 'education-physique',
+                title: 'سلك الإجازة في التربية البدنية والرياضية',
+                category: 'التعليم',
+                description: 'تكوين أطر تربوية مؤهلة لتغطية الحاجيات في التعليم الثانوي.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا في جميع المسالك', 'السن أقل من 21 سنة'],
+                branches: ['تخصص التعليم الثانوي - التربية البدنية والرياضية'],
+                accessMethod: 'مباراة الولوج عبر Cursussup.gov.ma'
+            },
+            {
+                id: 'insap',
+                title: 'المعهد الوطني لعلوم الآثار والتراث',
+                category: 'الثقافة والتراث',
+                description: 'تكوين الأطر المقبلة على العمل في مجال التراث الثقافي.',
+                duration: '3 سنوات للسلك الأساسي',
+                requirements: ['شهادة البكالوريا في جميع التخصصات', 'النجاح في مباراة الولوج'],
+                branches: ['مسلك علم الآثار', 'مسلك الأنثروبولوجيا والمتحفيات'],
+                accessMethod: 'مباراة الولوج'
+            },
+            {
+                id: 'isic',
+                title: 'المعهد العالي للإعلام والاتصال',
+                category: 'الإعلام',
+                description: 'تكوين في مجال الإعلام والاتصال.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا في جميع التخصصات', 'المعدل العام أكبر من أو يساوي 14/20', 'السن بين 17 و 25 سنة'],
+                branches: ['الإعلام والاتصال'],
+                accessMethod: 'التسجيل عبر preinscription.isic.ma'
+            },
+            {
+                id: 'ifmbtp',
+                title: 'معهد التكوين في مهن البناء والأشغال العمومية',
+                category: 'البناء والأشغال العمومية',
+                description: 'تكوين تقنيين متخصصين في ميادين البناء والأشغال العمومية.',
+                duration: 'سنتان',
+                requirements: ['شهادة البكالوريا العلمية أو التقنية', 'السن 17 سنة على الأقل'],
+                branches: ['Menuiserie Aluminium et Inox', 'Electricité et Domotique', 'Géomètre-Topographe', 'Métreur (se)', 'Techniques du laboratoire BTP', 'Méthodes en BTP'],
+                accessMethod: 'التسجيل عبر ifmbtp.ma'
+            },
+            {
+                id: 'interieur',
+                title: 'معاهد تكوين التقنيين المتخصصين (وزارة الداخلية)',
+                category: 'الإدارة الترابية',
+                description: 'تكوين تقنيين وتقنيين متخصصين للعمل بالمصالح المركزية واللاممركزة بوزارة الداخلية والجماعات الترابية.',
+                duration: 'سنتان',
+                requirements: ['شهادة الباكالوريا العلمية أو التقنية', 'السن أقل من 30 سنة'],
+                branches: ['التدبير المالي والمحاسباتي', 'تقنيات كتابة الإدارة', 'الطبع المعلوماتي', 'السمعي البصري', 'الهندسة الطبوغرافية'],
+                accessMethod: 'التسجيل عبر concours.interieur.gov.ma'
+            },
+            {
+                id: 'justice',
+                title: 'المعهد العالي للقضاء',
+                category: 'العدل',
+                description: 'تكوين الملحقين القضائيين وكتاب الضبط والعدول المتمرنين.',
+                duration: 'تختلف حسب السلك',
+                requirements: ['شهادة الإجازة في العلوم القانونية', 'شروط خاصة حسب السلك'],
+                branches: ['الملحقين القضائيين', 'كتاب الضبط', 'العدول المتمرنين'],
+                accessMethod: 'التسجيل عبر justice.gov.ma'
+            },
+            {
+                id: 'boulangerie',
+                title: 'معهد التكوين في مهن الخبازة والحلويات',
+                category: 'الصناعة الغذائية',
+                description: 'تكوين تقنيين متخصصين في مجال الخبازة والحلويات.',
+                duration: '3 سنوات',
+                requirements: ['شهادة البكالوريا في جميع الشعب', 'السن أقل من 30 سنة'],
+                branches: ['شعبة تسيير محل للخبازة', 'شعبة تقني متخصص في الخبازة والحلويات والشوكولاتة والمثلجات'],
+                accessMethod: 'التسجيل عبر ifmbp.ma'
+            }
+        ];
+
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        let compareList = [];
+
+        // Dark Mode Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            const icon = document.querySelector('.theme-toggle i');
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if(savedTheme === 'dark') {
+            document.querySelector('.theme-toggle i').className = 'fas fa-sun';
+        }
+
+        // Render formations
+        function renderFormations(formationsToRender) {
+            const grid = document.getElementById('formationsGrid');
+            const noResults = document.getElementById('noResults');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            if (!grid || !noResults || !resultsCount) return;
+            
+            resultsCount.textContent = formationsToRender.length;
+            
+            if (formationsToRender.length === 0) {
+                grid.style.display = 'none';
+                noResults.classList.add('show');
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            noResults.classList.remove('show');
+            
+            let html = '';
+            formationsToRender.forEach((formation, index) => {
+                const isFav = favorites.includes(formation.id);
+                const delay = index * 0.1;
+                
+                html += `
+                <div class="card" style="animation-delay: ${delay}s">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <button class="action-btn favorite ${isFav ? 'active' : ''}" onclick="toggleFavorite('${formation.id}', this)" title="إضافة للمفضلة">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="action-btn" onclick="shareFormation('${formation.title}')" title="مشاركة">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                            <button class="action-btn" onclick="addToCompare('${formation.id}')" title="إضافة للمقارنة">
+                                <i class="fas fa-balance-scale"></i>
+                            </button>
+                        </div>
+                        <span class="category-badge">
+                            <i class="fas fa-tag"></i> ${formation.category}
+                        </span>
+                        <h2 class="card-title">${formation.title}</h2>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">${formation.description}</p>
+                        
+                        <div class="card-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>${formation.duration} سنوات</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-door-open"></i>
+                                <span>${formation.accessMethod}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span>شروط الترشيح</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="accordion-body">
+                                        ${formation.requirements.map(req => `
+                                            <div class="list-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>${req}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <button class="accordion-header" onclick="toggleAccordion(this)">
+                                    <span>التخصصات المتاحة</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="accordion-body">
+                                        ${formation.branches.map(branch => `
+                                            <div class="list-item">
+                                                <i class="fas fa-check-circle"></i>
+                                                <span>${branch}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            });
+            
+            grid.innerHTML = html;
+        }
+
+        // Toggle accordion
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all accordion items in the same card
+            const card = item.closest('.card');
+            card.querySelectorAll('.accordion-item').forEach(acc => {
+                acc.classList.remove('active');
+            });
+            
+            // Toggle current if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Toggle favorite
+        function toggleFavorite(id, btn) {
+            const index = favorites.indexOf(id);
+            if (index > -1) {
+                favorites.splice(index, 1);
+                btn.classList.remove('active');
+            } else {
+                favorites.push(id);
+                btn.classList.add('active');
+                
+                // Animation effect
+                btn.style.transform = 'scale(1.3)';
+                setTimeout(() => btn.style.transform = 'scale(1)', 200);
+            }
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        }
+
+        // Share formation
+        function shareFormation(title) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: `تعرف على تكوين ${title} في دليل التكوينات الجامعية المغربية`,
+                    url: window.location.href
+                }).catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback - copy to clipboard
+                const text = `تعرف على تكوين ${title} في دليل التكوينات الجامعية المغربية: ${window.location.href}`;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('تم نسخ الرابط للمشاركة!');
+                });
+            }
+        }
+
+        // Add to compare
+        function addToCompare(id) {
+            if (compareList.includes(id)) {
+                alert('هذا التكوين مضاف للمقارنة بالفعل!');
+                return;
+            }
+            if (compareList.length >= 3) {
+                alert('يمكنك مقارنة 3 تكوينات كحد أقصى!');
+                return;
+            }
+            compareList.push(id);
+            updateCompareBar();
+        }
+
+        // Update compare bar
+        function updateCompareBar() {
+            const bar = document.getElementById('compareBar');
+            const count = document.getElementById('compareCount');
+            
+            if (compareList.length > 0) {
+                bar.classList.add('show');
+                count.textContent = `تم اختيار ${compareList.length} تكوين${compareList.length > 1 ? 'ات' : ''}`;
+            } else {
+                bar.classList.remove('show');
+            }
+        }
+
+        // Compare selected
+        function compareSelected() {
+            if (compareList.length < 2) {
+                alert('يرجى اختيار تكوينين على الأقل للمقارنة!');
+                return;
+            }
+            
+            const selected = formations.filter(f => compareList.includes(f.id));
+            let html = '<div style="padding: 20px;">';
+            html += '<h2 style="margin-bottom: 20px;">مقارنة التكوينات</h2>';
+            html += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">';
+            
+            selected.forEach(f => {
+                html += `
+                    <div style="background: var(--card-bg); padding: 20px; border-radius: 16px; border: 2px solid var(--primary-color);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 10px;">${f.title}</h3>
+                        <p><strong>المدة:</strong> ${f.duration} سنوات</p>
+                        <p><strong>الفئة:</strong> ${f.category}</p>
+                        <p><strong>الولوج:</strong> ${f.accessMethod}</p>
+                    </div>
+                `;
+            });
+            
+            html += '</div></div>';
+            
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write(`
+                <html dir="rtl" lang="ar">
+                <head>
+                    <title>مقارنة التكوينات</title>
+                    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+                    <style>
+                        body { font-family: 'Tajawal', sans-serif; background: #f0f9ff; color: #1e293b; margin: 0; }
+                    </style>
+                </head>
+                <body>${html}</body>
+                </html>
+            `);
+        }
+
+        // Clear comparison
+        function clearComparison() {
+            compareList = [];
+            updateCompareBar();
+        }
+
+        // Filter formations
+        function filterFormations() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedCategory = document.getElementById('categorySelect').value;
+            const durationFilter = document.getElementById('durationFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            
+            const filtered = formations.filter(formation => {
+                const matchesSearch = formation.title.toLowerCase().includes(searchTerm) ||
+                                     formation.description.toLowerCase().includes(searchTerm);
+                const matchesCategory = selectedCategory === 'الكل' || formation.category === selectedCategory;
+                const matchesDuration = durationFilter === 'all' || formation.duration === durationFilter;
+                const matchesType = typeFilter === 'all' || formation.type === typeFilter;
+                
+                return matchesSearch && matchesCategory && matchesDuration && matchesType;
+            });
+            
+            renderFormations(filtered);
+        }
+
+        // Reset search
+        function resetSearch() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('categorySelect').value = 'الكل';
+            document.getElementById('durationFilter').value = 'all';
+            document.getElementById('typeFilter').value = 'all';
+            renderFormations(formations);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').addEventListener('input', filterFormations);
+            document.getElementById('categorySelect').addEventListener('change', filterFormations);
+            document.getElementById('durationFilter').addEventListener('change', filterFormations);
+            document.getElementById('typeFilter').addEventListener('change', filterFormations);
+            
+            renderFormations(formations);
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+    </script>
+</body>
+</html>
